@@ -1,55 +1,9 @@
 # _pelajaran-java_
 
-## **Apa itu sebuah permukaan**
+## **Apa itu sebuah paket**
 
-Sebagaimana yang telah dipelajari, objek-objek merumuskan interaksinya dengan dunia luar melalui metode-metode yang ditampakkan. Metode-metode membentuk permukaan objek-objek dengan dunia luar; Sebagai contoh tombol-tombol yang ada di bagian depan televisi adalah permukaan antara anda dengan perkabelan listrik di bagian lainnya di dalam bungkus plastik. Anda menekan tombol "daya" untuk menyalakan dan mematikan televisi.
+Sebuah paket ialah ruangnama yang mengorganisaikan himpunan dari kelas-kelas dan antarmuka-antarmuka. Secara konsep anda dapat berfikir bahwa paket semisal direktori-direktori yang berbeda-beda pada komputer anda. Anda mungkin menyimpan halaman-halaman HTML di dalam satu direktori, gambar-gambar di dalam direktori yang lainnya, dan skrip-skrip atau aplikasi-aplikasi masih juga di direktori yang lainnya. Karena perangkatlunak yang ditulis dalam bahasa pemrograman Java bisa terdiri dari ratusan atau ribuan kelas-kelas masing-masing, adalah masuk akal untuk diorganisasikan dengan cara meletakkan kelas-kelas yang berkaitan dan antarmuka-antarmuka menjadi paket-paket.
 
-Dalam bentuknya yang umum, sebuah permukaan ialah sekumpulan metode yang saling terkait yang tubuhnya kosong. Kelakuan sebuah sepeda, jika dirumuskan sebagai sebuah permukaan, mungkin muncul sebagai berikut:
+Platform Java menyediakan pustaka (himpunan dari paket-paket) kelas yang luarbiasa banyak cocok digunakan pada aplikasi Anda. pustaka ini dikenal sebagai Antarmuka Pemrograman Aplikasi atau disingkat menjadi APA. Paket-paketnya mewakili tugas-tugas paling banyak umumnya dihubungkan dengan pemrograman tujuan-umum. Sebagai contoh, sebuah objek `String` mengandung keadaan dan kelakuan untuk untaian-untaian karakter. Sebuah objek `File` mengizinkan seorang pemrogram untuk secara mudah membuat, menghapus, memeriksa, membandingkan, atau mengubah sebuah berkas pada sistem-berkas; sebuah objek `Socket` mengizinkan untuk pembuatan dan menggunakan soket-soket jaringan; aneka tombol-tombol kontrol daripada objek-objek GUI dan kotakcentang-kotakcentang dan segala lainnya yang berkaitan dengan antarmuka grafis pengguna. Secara harfiah ada ribuan kelas-kelas untuk dipilih. Ini mengizinkan anda, sebagai pemrogram, untuk fokus pada desainnya aplikasi tertentu anda, daripada infrastruktur yang diperlukan agar ia berkerja.
 
-```java
-interface Sepeda{
-    // perputaran roda per menit
-    void ubahAyunan(int nilaiBaru);
-
-    void ubahGerigi(int nilaiBaru);
-
-    void pacukanlah(int penambahan);
-
-    void lambatkanlah(int pengurangan);
-}
-```
-
-Untuk menerapkan permukaan ini, nama dari kelas anda akan berubah (menjadi merek tertentu dari sebuah sepeda, sebagai contoh, SepedaACME), dan anda akan gunakan katakunci `implements` pada saat deklarasi kelas:
-
-```java
-class SepedaACME implements Sepeda{
-    int ayunan = 0;
-    int kecepatan =0;
-    int gerigi = 1;
-
-    // Kompilator akan mewajibkan metode itu
-    // ubahAyunan, ubahGerigi, pacukanlah, dan lambatkanlah
-    // keseluruhannya untuk diterapkan. Kompilasi akan gagal jika semua
-    // metode-metode ini hilang dari kelas ini
-
-    void ubahAyunan(int nilaiBaru){
-        ayunan = nilaiBaru;
-    }
-    void ubahGerigi(int nilaiBaru){
-        gerigi = nilaiBaru;
-    }
-    void pacukanlah(int penambahan){
-        kecepatan = kecepatan + penambahan;
-    }
-    void lambatkanlah(int pengurangan){
-        kecepatan = kecepatan - pengurangan;
-    }
-    void cetakKeadaan(){
-        System.out.println("ayunan: " + ayunan + " kecepatan: " + kecepatan + " gerigi: " + gerigi );
-    }
-}
-```
-
-Menerapkan sebuah permukaan mengizinkan sebuah kelas untuk menjadi lebih formil berkenaan dengan kelakuan yang menjadi janji untuk disediakan. Permukaan-permukaan membentuk sebuah kontrak antara si kelas dengan dunia luar, dan kontrak ini dipaksakan pada waktu bina oleh si kompilator. Jika kelas anda mengaku akan menerapkan sebuah permukaan, semua metode yang dirumuskan oleh permukaan tersebut wajib muncul di dalam kode sumber sebelum si kelas dikompilasikan dengan sukses.
-
-> ## **catatan**: Untuk sesungguhnya mengkompilasikan kelas `SepedaACME`, anda akan memerlukan untuk menambahkan si katakunci `public` di bagian depan dari metode-metode permukaan terterapkan. Anda akan mempelajari alasan-alasan berkenaan dengan hal tersebut di dala pelajaran-pelajaran dengan judul **Kelas-kelas dan Objek-objek** dan **Permukaan dan Pewarisan**.
+Si **Spesifikasi API Platform Java** mengandung daftar lengkap dari semua paket, antarmuka, kelas, bidang, dan metode dipasok oleh platform Java SE. Angkut halaman pada peramban anda dan tandabukukanlah ia. Sebagai seorang pemrogram, Ia akan menjadi bagian dokumentasi rujukan yang paling penting.

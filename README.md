@@ -1,4 +1,4 @@
-# _pelajaran-java_
+# _PELAJARAN JAVA_
 
 ## **Apa itu sebuah paket**
 

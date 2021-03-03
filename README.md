@@ -1,9 +1,15 @@
 # _PELAJARAN JAVA_
 
-## **Apa itu sebuah paket**
+## **Dasar-dasar Bahasa**
 
-Sebuah paket ialah ruangnama yang mengorganisaikan himpunan dari kelas-kelas dan antarmuka-antarmuka. Secara konsep anda dapat berfikir bahwa paket semisal direktori-direktori yang berbeda-beda pada komputer anda. Anda mungkin menyimpan halaman-halaman HTML di dalam satu direktori, gambar-gambar di dalam direktori yang lainnya, dan skrip-skrip atau aplikasi-aplikasi masih juga di direktori yang lainnya. Karena perangkatlunak yang ditulis dalam bahasa pemrograman Java bisa terdiri dari ratusan atau ribuan kelas-kelas masing-masing, adalah masuk akal untuk diorganisasikan dengan cara meletakkan kelas-kelas yang berkaitan dan antarmuka-antarmuka menjadi paket-paket.
+### **Peubah**
 
-Platform Java menyediakan pustaka (himpunan dari paket-paket) kelas yang luarbiasa banyak cocok digunakan pada aplikasi Anda. pustaka ini dikenal sebagai Antarmuka Pemrograman Aplikasi atau disingkat menjadi APA. Paket-paketnya mewakili tugas-tugas paling banyak umumnya dihubungkan dengan pemrograman tujuan-umum. Sebagai contoh, sebuah objek `String` mengandung keadaan dan kelakuan untuk untaian-untaian karakter. Sebuah objek `File` mengizinkan seorang pemrogram untuk secara mudah membuat, menghapus, memeriksa, membandingkan, atau mengubah sebuah berkas pada sistem-berkas; sebuah objek `Socket` mengizinkan untuk pembuatan dan menggunakan soket-soket jaringan; aneka tombol-tombol kontrol daripada objek-objek GUI dan kotakcentang-kotakcentang dan segala lainnya yang berkaitan dengan antarmuka grafis pengguna. Secara harfiah ada ribuan kelas-kelas untuk dipilih. Ini mengizinkan anda, sebagai pemrogram, untuk fokus pada desainnya aplikasi tertentu anda, daripada infrastruktur yang diperlukan agar ia berkerja.
+Sebagaimana yang telah anda pelajari dari pelajaran sebelumnya, sebuah objek menyimpan perihal di dalam bidang-bidang.
 
-Si **Spesifikasi API Platform Java** mengandung daftar lengkap dari semua paket, antarmuka, kelas, bidang, dan metode dipasok oleh platform Java SE. Angkut halaman pada peramban anda dan tandabukukanlah ia. Sebagai seorang pemrogram, Ia akan menjadi bagian dokumentasi rujukan yang paling penting.
+```java
+    int ayunan = 0;
+    int kecepatan = 0;
+    int gerigi = 1;
+```
+
+Si diskusi [**Apa itu Objek?**](ce3adfe8b9e2c45b34fd963fba2b34291bf257ea) memperkenalkan kepada anda hal bidang-bidang, tetapi anda mungkin memiliki sedikit pertanyaan, seperti: Apa saja aturan-aturan atau dan ketentuan dalam hal penamaan dari sebuah bidang? Selain `int`, ada tipe data apa saja selainnya?

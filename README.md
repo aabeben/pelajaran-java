@@ -1,20 +1,55 @@
 # _pelajaran-java_
 
-## **Apa Itu Pewarisan?**
+## **Apa itu sebuah permukaan**
 
-Objek-objek yang beraneka ragam seringnya memiliki sebuah jumlah persamaan tertentu antara satu dengan yang lainnya. Sebagai contoh sepeda-sepeda gunung, sepeda-sepeda jalanan, dan sepeda-sepeda bonceng, semuanya itu memiliki persamaan karakter-karakter daripada sepeda-sepeda (kecepatan terkini, ayunan pedal terkini, gerigi terkini). Namun demikian masing-masing merumuskan fitur-fitur tambahan yang membuat mereka berbeda: sepeda boncengan memiliki dua bangku dan dua pasang pegangan, sepeda jalan memiliki pegangan jatuh; beberapa sepeda gunung memiliki tambahan cincin rantai, yang memungkinkan rasio gigi yang rendah.
+Sebagaimana yang telah dipelajari, objek-objek merumuskan interaksinya dengan dunia luar melalui metode-metode yang ditampakkan. Metode-metode membentuk permukaan objek-objek dengan dunia luar; Sebagai contoh tombol-tombol yang ada di bagian depan televisi adalah permukaan antara anda dengan perkabelan listrik di bagian lainnya di dalam bungkus plastik. Anda menekan tombol "daya" untuk menyalakan dan mematikan televisi.
 
-Pemrograman berbasis objek mengizinkan kelas-kelas untuk mewariskan hal keadaan dan kelakuan umumnya digunakan dari kelas-kelas lainnya. Pada contoh ini, `Sepeda` sekarang menjadi super kelas dari `SepedaGunung`, `SepedaJalanan`, `SepedaBonceng`.
+Dalam bentuknya yang umum, sebuah permukaan ialah sekumpulan metode yang saling terkait yang tubuhnya kosong. Kelakuan sebuah sepeda, jika dirumuskan sebagai sebuah permukaan, mungkin muncul sebagai berikut:
 
-Sintaks untuk membuat sebuah subkelas ialah sederhana. Pada permulaan dari deklarasi kelas, gunakan katakunci `extends` diikuti oleh nama kelas yang diwarisi daripadanya.
+```java
+interface Sepeda{
+    // perputaran roda per menit
+    void ubahAyunan(int nilaiBaru);
 
-```
-class SepedaGunung extends Sepeda{
-    // Bidang-bidang dan metode-metode baru
-    // Yang merumuskan sebuah Sepeda Gunung terletak di sini.
+    void ubahGerigi(int nilaiBaru);
+
+    void pacukanlah(int penambahan);
+
+    void lambatkanlah(int pengurangan);
 }
 ```
 
-Ini memberikan semua bidang-bidan dan metode-metode seperti halnya `Sepeda`, tetapi mengizinkan kodenya untuk fokus secara ekslusif pada fitur-fitur yang membuatnya jadi unik. Ini membuat kode untuk subkelas-subkelas mudah untuk dibaca.
+Untuk menerapkan permukaan ini, nama dari kelas anda akan berubah (menjadi merek tertentu dari sebuah sepeda, sebagai contoh, SepedaACME), dan anda akan gunakan katakunci `implements` pada saat deklarasi kelas:
 
-Namun demikian, anda harus berhati-hati dalam hal mendokumentasikan secara benar hal dan kelakuan yang masing-masing superkelas rumuskan, dikarenakan kode-kode tersebut tidak akan muncul di dalam berkas sumber dari masing-masing subkelas.
+```java
+class SepedaACME implements Sepeda{
+    int ayunan = 0;
+    int kecepatan =0;
+    int gerigi = 1;
+
+    // Kompilator akan mewajibkan metode itu
+    // ubahAyunan, ubahGerigi, pacukanlah, dan lambatkanlah
+    // keseluruhannya untuk diterapkan. Kompilasi akan gagal jika semua
+    // metode-metode ini hilang dari kelas ini
+
+    void ubahAyunan(int nilaiBaru){
+        ayunan = nilaiBaru;
+    }
+    void ubahGerigi(int nilaiBaru){
+        gerigi = nilaiBaru;
+    }
+    void pacukanlah(int penambahan){
+        kecepatan = kecepatan + penambahan;
+    }
+    void lambatkanlah(int pengurangan){
+        kecepatan = kecepatan - pengurangan;
+    }
+    void cetakKeadaan(){
+        System.out.println("ayunan: " + ayunan + " kecepatan: " + kecepatan + " gerigi: " + gerigi );
+    }
+}
+```
+
+Menerapkan sebuah permukaan mengizinkan sebuah kelas untuk menjadi lebih formil berkenaan dengan kelakuan yang menjadi janji untuk disediakan. Permukaan-permukaan membentuk sebuah kontrak antara si kelas dengan dunia luar, dan kontrak ini dipaksakan pada waktu bina oleh si kompilator. Jika kelas anda mengaku akan menerapkan sebuah permukaan, semua metode yang dirumuskan oleh permukaan tersebut wajib muncul di dalam kode sumber sebelum si kelas dikompilasikan dengan sukses.
+
+> ## **catatan**: Untuk sesungguhnya mengkompilasikan kelas `SepedaACME`, anda akan memerlukan untuk menambahkan si katakunci `public` di bagian depan dari metode-metode permukaan terterapkan. Anda akan mempelajari alasan-alasan berkenaan dengan hal tersebut di dala pelajaran-pelajaran dengan judul **Kelas-kelas dan Objek-objek** dan **Permukaan dan Pewarisan**.
